@@ -1,14 +1,14 @@
 import java.util.Random;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class ArrayListTest {
     public static void main(String[] args){
-        HashMap<Integer, String> hashMap = new HashMap<>();
+        ArrayList<String> arrayList = new ArrayList<>();
         Random random = new Random();
 
         for (int i = 0; i < 100000; i++){
             String value = "value" + i;
-            hashMap.put(i, value );
+            arrayList.add(value);
         }
 
         long addTime = 0;
@@ -18,7 +18,7 @@ public class ArrayListTest {
 
         for (int i = 100000; i < 100100; i++){
             long start = System.nanoTime();
-            hashMap.put(i, "value" );
+            arrayList.add("value" + i);
             long end = System.nanoTime();
             addTime += (end - start);
         }
@@ -26,7 +26,7 @@ public class ArrayListTest {
         for (int i = 0; i < 100; i++){
             String value = "value" + (random.nextInt(99999)+50000);
             long start = System.nanoTime();
-            boolean a = hashMap.containsValue(value);
+            boolean contains = arrayList.contains(value);
             long end = System.nanoTime();
             checkingTime += (end - start);
         }
@@ -34,20 +34,20 @@ public class ArrayListTest {
         for (int i = 0; i < 100; i++){
             Integer value = random.nextInt(99999)+50000;
             long start = System.nanoTime();
-            hashMap.remove(value);
+            arrayList.remove(value.toString());
             long end = System.nanoTime();
             removingTime += (end - start);
         }
 
         for (int i = 0; i < 100; i++){
             long start = System.nanoTime();
-            hashMap.clear();
+            arrayList.clear();
             long end = System.nanoTime();
             clearingTime += (end - start);
 
             for (int j = 0; j < 100000; j++){
                 String value = "value" + j;
-                hashMap.put(j, value );
+                arrayList.add(value);
             }
         }
 
@@ -58,4 +58,3 @@ public class ArrayListTest {
 
     }
 }
-
