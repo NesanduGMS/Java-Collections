@@ -54,6 +54,6 @@ public class LinkedHashMapTest {
         System.out.println("Add an element -> "+ addTime/100 + " nanoseconds");
         System.out.println("Find an element -> "+ checkingTime/100 + " nanoseconds");
         System.out.println("Remove an element -> "+ removingTime/100 + " nanoseconds");
-        System.out.println("Clear all the elements -> "+ clearingTime/100 + " nanoseconds");
+        System.out.println("Clear all the elements ->  "+ clearingTime/100 + " nanoseconds");
     }
 }
