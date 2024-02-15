@@ -1,14 +1,13 @@
 import java.util.Random;
 import java.util.LinkedList;
 
-public class LinkedListTest {
+public class ArrayListTest {
     public static void main(String[] args){
-        LinkedList<String> linkedList = new LinkedList<>();
+        LinkedList<Integer> linkedList = new LinkedList<>();
         Random random = new Random();
 
         for (int i = 0; i < 100000; i++){
-            String value = "value" + i;
-            linkedList.add(value);
+            linkedList.add(i);
         }
 
         long addTime = 0;
@@ -18,13 +17,13 @@ public class LinkedListTest {
 
         for (int i = 100000; i < 100100; i++){
             long start = System.nanoTime();
-            linkedList.add("value" + i);
+            linkedList.add(i);
             long end = System.nanoTime();
             addTime += (end - start);
         }
 
         for (int i = 0; i < 100; i++){
-            String value = "value" + (random.nextInt(99999)+50000);
+            int value = random.nextInt(99999) + 50000;
             long start = System.nanoTime();
             boolean contains = linkedList.contains(value);
             long end = System.nanoTime();
@@ -32,9 +31,9 @@ public class LinkedListTest {
         }
 
         for (int i = 0; i < 100; i++){
-            Integer value = random.nextInt(99999)+50000;
+            Integer value = random.nextInt(99999) + 50000;
             long start = System.nanoTime();
-            linkedList.remove(value.toString());
+            linkedList.remove(value);
             long end = System.nanoTime();
             removingTime += (end - start);
         }
@@ -46,8 +45,7 @@ public class LinkedListTest {
             clearingTime += (end - start);
 
             for (int j = 0; j < 100000; j++){
-                String value = "value" + j;
-                linkedList.add(value);
+                linkedList.add(j);
             }
         }
 
