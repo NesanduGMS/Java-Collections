@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.LinkedList;
 
-public class ArrayListTest {
+public class LinkedListTest {
     public static void main(String[] args){
         LinkedList<Integer> linkedList = new LinkedList<>();
         Random random = new Random();

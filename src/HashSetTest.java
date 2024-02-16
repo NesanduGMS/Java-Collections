@@ -1,7 +1,7 @@
 import java.util.HashSet;
 import java.util.Random;
 
-public class HashsetTest {
+public class HashSetTest {
     public static void main(String[] args) {
         long timetoAdd = 0;
         long timetoContain = 0;

@@ -1,7 +1,7 @@
 import java.util.ArrayDeque;
 import java.util.Random;
 
-public class EArrayDequeTest {
+public class ArrayDequeTest {
     public static void main(String[] args) {
         long timetoAdd = 0;
         long timetoContain = 0;
