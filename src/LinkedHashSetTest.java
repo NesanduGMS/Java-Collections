@@ -1,7 +1,7 @@
 import java.util.LinkedHashSet;
 import java.util.Random;
 
-public class LinkedSetTest {
+public class LinkedHashSetTest {
     public static void main(String[] args) {
         long timetoAdd = 0;
         long timetoContain = 0;
